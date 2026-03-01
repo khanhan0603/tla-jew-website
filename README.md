@@ -4,9 +4,9 @@
 
 TLA Jew là website bán trang sức được xây dựng theo mô hình gồm:
 
-- 🔹 Frontend: HTML, CSS, JavaScript
-- 🔹 Backend: Spring Boot (Java)
-- 🔹 Cơ sở dữ liệu: MySQL
+- Frontend: HTML, CSS, JavaScript
+- Backend: Spring Boot (Java)
+- Cơ sở dữ liệu: MySQL
 
 Hệ thống cho phép người dùng xem sản phẩm, tìm kiếm, quản lý dữ liệu thông qua API backend.
 
