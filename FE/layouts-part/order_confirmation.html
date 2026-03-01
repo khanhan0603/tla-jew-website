@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Xác nhận đơn hàng</title>
+<style>
+.popup {
+    width: 450px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px #999;
+    font-family: Arial;
+}
+.popup h2 {
+    margin-bottom: 10px;
+    color: green;
+}
+.popup table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.popup table td {
+    padding: 5px;
+}
+.popup .total {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+<div class="popup">
+    <h2>Đặt hàng thành công!</h2>
+
+    <p><b id="orderId"></b></p>
+    <p><b id="fullName"></b></p>
+    <p><b id="phone"></b></p>
+    <p><b id="address"></b></p>
+
+    <h3>Chi tiết sản phẩm</h3>
+    <table border="1">
+        <tr>
+            <th>Tên SP</th>
+            <th>SL</th>
+            <th>Đơn giá</th>
+            <th>Thành tiền</th>
+            <th>Phương thức thanh toán</th>
+        </tr>
+                <tbody id="orderItems">
+                </tbody>
+    </table>
+
+    <p class="total" id="totalPrice">
+    </p>
+
+    <button onclick="window.location.href='home.html'">
+        Về trang chủ
+    </button>
+</div>
+<script src="../js/success_order.js"></script>
+</body>
+</html>
+

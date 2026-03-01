@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomePage</title>
+
+  <!-- Bootstrap & FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      display: flex;
+    }
+
+    /* HEADER */
+    .header-admin {
+      width: 100%;
+      height: 75px;
+      background: #4B6382;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 25px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    
+    }
+
+    .header-admin h2 {
+      font-size: 35px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      
+    }
+
+    .header-admin-right i {
+      margin-left: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .header-admin-right i:hover {
+      color: #dce5ff;
+    }
+
+    /* SIDEBAR */
+    .main-admin {
+      width: 230px;
+      background: #30445c;
+      height: 100vh;
+      padding-top: 120px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      color: white;
+      
+    }
+
+    .main-admin ul {
+      list-style: none;
+      
+     
+    }
+
+    .main-admin ul li {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .main-admin ul li a {
+      display: block;
+      padding: 10px 15px;
+      color: #dce3ee;
+      font-size: 22px;
+  
+      text-decoration: none;
+      transition: 0.3s;
+
+    }
+
+    .main-admin ul li a i {
+      margin-right: 12px;
+      font-size: 25px;
+    }
+
+    .main-admin ul li a:hover {
+      background: #3f597a;
+      color: white;
+    }
+
+    /* CONTENT AREA */
+    .content {
+      font-size: 20px;
+      margin-left: 225px;
+      margin-top: 80px;
+      padding: 50px;
+      width: calc(100% - 230px);
+    }
+    .content h2{
+      font-size: 50px;
+    }
+    .search-box-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* ĐẨY SANG PHẢI */
+  margin-bottom: 30px;
+}
+
+.search-order {
+  width: 500px;
+  height: 45px;
+  background: white;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-order input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 17px;
+  padding-left: 10px;
+}
+
+.search-order i {
+  font-size: 20px;
+  color: #555;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header-admin">
+    <h2>LA JEW</h2>
+    <div class="header-admin-right">
+      <i class="fa-solid fa-bell"></i>
+     <a href="thongtinadmin"><i class="fa-solid fa-user"></i></a>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="main-admin">
+    <ul>
+      <li><a href="./sanphamcuatoi.html"><i class="fa-solid fa-list"></i>Sản phẩm</a></li>
+      <li><a href="./loaisanpham.html"><i class="fa-solid fa-list"></i>Loại sản phẩm</a></li>
+      
+      <li><a href="./donhang_admin.html"><i class="fa-solid fa-sack-dollar"></i>Đơn hàng</a></li>
+     <li><a href="./thongtin_admin.html"><i class="fa-solid fa-gear"></i>Cài đặt</a></li>
+    </ul>
+  </div>
+
+  <!-- Content - Form chỉnh sửa thông tin admin (đã sửa lỗi tên bị đẩy lên) -->
+<div class="content">
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+
+      <form id="updateAdmin">
+
+        <div class="card shadow-sm border-0" style="border-radius: 20px; overflow: hidden;">
+
+          <!-- Header tím + avatar -->
+          <div class="text-center position-relative" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px 20px 80px;">
+            <label for="avatar_upload" style="cursor: pointer; display: inline-block;">
+              <img src="../../images/admin.jpg" 
+                   alt="Avatar" id="avatar_preview"
+                   class="rounded-circle border border-5 border-white shadow"
+                   style="width: 140px; height: 140px; object-fit: cover;">
+            </label>
+            
+            <!-- Tên + chức vụ nằm ngay dưới avatar -->
+            <h3 class="mt-3 mb-1 text-white fw-bold" style="font-size: 28px;" id="fullname">
+              
+            </h3>
+            <p class="text-white opacity-75 mb-0">Administrator</p>
+          </div>
+
+          <!-- Phần thông tin chi tiết (có input) -->
+          <div class="card-body" style="margin-top: -50px;">
+
+            <div class="bg-white rounded-4 shadow-sm p-4 p-md-5">
+
+              <div class="row g-4">
+
+                <!-- Họ tên (có thể sửa) -->
+                <div class="col-12">
+                  <label class="form-label fw-500 text-muted"><i class="fa-solid fa-user me-2"></i>Họ và tên</label>
+                  <input type="text" name="hoten" value="" id="fullname-2"
+                         class="form-control form-control-lg" required>
+                </div>
+                
+                <!-- Số điện thoại -->
+                <div class="col-md-6">
+                  <label class="form-label fw-500 text-muted"><i class="fa-solid fa-phone me-2"></i>Số điện thoại</label>
+                  <input type="text" name="sdt" value=""  id="phone"
+                         class="form-control" required>
+                </div>
+
+                <!-- Địa chỉ -->
+                <div class="col-12">
+                  <label class="form-label fw-500 text-muted"><i class="fa-solid fa-location-dot me-2"></i>Địa chỉ</label>
+                  <input type="text" name="diachi" value="" id="address"
+                         class="form-control">
+                </div>
+
+              </div>
+
+              <hr class="my-5">
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-success btn-lg px-5 py-3 me-3" style="border-radius: 30px;">
+                  Lưu thay đổi
+                </button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-5 py-3" style="border-radius: 30px;" onclick="logout()">
+                  Đăng xuất
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+  <script src="../../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+</head>
+<body>
+   <div class="header">
+    <div class="header1">Miễn phí vận chuyển cho những đơn hàng đầu tiên</div>
+    <div class="list_item">
+      <ul class="list">
+        <li class="item">
+          <button><img src="../images/Group 8.svg" alt="" id="menu" onclick="menuIconclick()">
+          </button>
+        
+                   <ul id="menu-list" class="hidden">
+                            <li><a href="#" id="close-menu" onclick="closeMenuclick()">X</a></li>
+                            <li><a href="home">home</a></li>
+                            <li><a href="#">Accesories</a>
+                            <i class="fas fa-caret-right"></i>
+                            </li>
+                            <li><a href="#">new in </a></li>
+                             <li><a href="#">collection</a></li>
+                            <li><a href="../Aboutus/aboutus.html">About Us</a></li>
+                            <li>
+                              <div class="menu-item">
+                              <a href="../layouts-part/home.html" class="menu-item-text">TLA-Jew</a>
+                              <div class="menu-icons">
+                               <a href="#"><img src="../images/instagram-icon-white-on-black 1.png" alt="" class="menu-item-icon"></a>
+                                <a href="#"><img src="../images/tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png.png" alt="" class="menu-item-icon"></a>
+                                </div>
+                              </li>                        
+                        </ul>
+               
+             <div class="accesories-list">
+              <ul id="accesories-list-item" class="hidden1">
+                <li class="accesories-item">
+                  <i class="fas fa-caret-left"></i>
+                  <a href="#">ACCESERIES </a>
+                </li>
+                <li class="accesories-item"> 
+                  <form action="" method="get" >
+                 <input type="button" class="submitsp"value="Tất cả sản phẩm" input type="button" value="Tất cả sản phẩm" onclick="window.location.href='<?php echo _HOST_URL.'/products' ;?>'">
+                </form>
+                    <form action="" method="post">
+                 <input type="button" class="submitsp"value="Nhẫn" onclick="nhan()">
+                </form>
+                   <form action="" method="post">
+                 <input type="button" class="submitsp"value="Vòng tay" onclick="vongtay()">
+                </form>
+                  <form action="" method="post">
+                 <input type="button" class="submitsp"value="Dây chuyền" onclick="daychuyen()">
+                </form>
+                  <form action="" method="post">
+                 <input type="button" class="submitsp"value="Đồng hồ" onclick="dongho()">
+                </form>
+                   <form action="" method="post">
+                 <input type="button" class="submitsp"value="Bông tai" onclick="bongtai()">
+                  </form>
+                </li> 
+              </ul>
+              </div>
+        </li>
+        <a href="home" style="color: red;"><li class="item">TLA-Jew</li></a>
+        <li class="item">
+         <button onclick="window.location.href='/BanTrangSuc/search'"> <img src="../images/Frame 248.svg" alt="" id="timkiem"></button>
+        <button onclick="window.location.href='/BanTrangSuc/showProfileUser?email=<?php echo isset($_SESSION['email_khachhang']) ? $_SESSION['email_khachhang'] : '' ;?>'"> 
+          <img src="../images/user.svg" alt="" id="user">
+        </button>
+        
+        <button>
+           <div class="icon_cart"><a href="cart" class="cart" >
+            <img src="../images/Shopping Cart.png" alt="" id="giohang">
+            <span class="cart-count">
+            <?php echo $cartCount; ?>
+            </span>
+          </a>
+          </div>
+        </button>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </div>
+       <script src="../js/main.js" defer></script> 
+</body>
+</html>

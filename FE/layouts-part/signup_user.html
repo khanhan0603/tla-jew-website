@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="signup-container">
+      <img onclick="history.back();" src="../images/close.png" alt="" style="width: 30px" align="right" />
+      <h1>Create an account</h1>
+      <p>Already have an account? <a href="login_khachhang.html">Log in</a></p>
+      <!-- Không action nữa vì khi nhấn submit form sẽ gửi dữ liệu đến cùng một URL (register) có phương thức POST  -->
+      <form id="formDangKy">
+        <input type="text" placeholder="Create a username" name="username" value="" />
+         <input type="password" placeholder="Create a password" name="password" id="password" autocomplete="new-password" />
+        <input type="text" placeholder="Your phone" name="phone" id="phone" />
+        <div id="signup-error" style="color:red; margin-top:10px;"></div>
+        <button type="submit">CREATE AN ACCOUNT</button>
+      </form>
+    </div>
+    <script src="../js/user.js"></script>
+  </body>
+</html>

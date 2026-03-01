@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="login">
+      <div class="login-container">
+        <img onclick="history.back();" src="../images/close.png" alt="" style="width: 30px" align="right" />
+        <img src="../images/cart.png" alt="Cart Icon" />
+        <form id="loginForm">
+          <input type="text" 
+          placeholder="username" 
+          name="username"
+          id="username"
+          style="background-image: url('../images/user.png')"
+          />
+          <input
+            type="password"
+            placeholder="password"
+            name="password"
+            id="password"
+            style="background-image: url('../images/lock.png')"
+          />
+          <button type="submit">LOGIN</button>
+        </form>
+        <p class="signup">
+          Don't have an account?
+          <a href="./signup_user.html">Sign up</a>
+        </p>
+      </div>
+    </div>
+    <script src="../js/login.js"></script>
+    <script src="../js/cart.js"></script>
+  </body>
+</html>

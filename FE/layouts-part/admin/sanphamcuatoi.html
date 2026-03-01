@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý sản phẩm</title>
+
+  <!-- Bootstrap & FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Roboto", sans-serif; }
+    body { background-color: #f4f6f9; display: flex; }
+
+    /* HEADER */
+    .header-admin {
+      width: 100%; height: 75px; background: #4B6382; color: white;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 25px; position: fixed; top: 0; left: 0; z-index: 100;
+    }
+    .header-admin h2 { font-size:35px; font-weight: 700; letter-spacing: 2px; }
+    .header-admin-right i { margin-left: 20px; font-size: 30px; cursor: pointer; transition: 0.3s; }
+    .header-admin-right i:hover { color: #dce5ff; }
+
+    /* SIDEBAR */
+    .main-admin {
+      width: 230px; background: #30445c; height: 100vh; padding-top: 120px;
+      position: fixed; top: 0; left: 0; color: white;
+    }
+    .main-admin ul { list-style: none; }
+    .main-admin ul li { width: 100%; margin-top: 15px; }
+    .main-admin ul li a {
+      display: block; padding: 10px 15px; color: #dce3ee; font-size: 22px;
+      text-decoration: none; transition: 0.3s;
+    }
+    .main-admin ul li a i { margin-right: 12px; font-size: 25px; }
+    .main-admin ul li a:hover { background: #3f597a; color: white; }
+
+    /* CONTENT AREA */
+    .content {
+      margin-left: 230px;
+      font-size: 20px; margin-top: 80px; padding: 50px;
+      width: calc(100% - 230px);
+    }
+    .search-box-container { width: 100%; display: flex; justify-content: space-between; margin-bottom: 50px; }
+    .search-order {
+      width: 500px; height: 45px; background: white; border-radius: 30px; border: 1px solid #ccc;
+      display: flex; align-items: center; padding: 0 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .search-order input { border: none; outline: none; width: 100%; font-size: 17px; padding-left: 10px; }
+    .search-order i { font-size: 20px; color: #555; }
+
+    .table-sanpham {
+      width: 100%; background: white; border-radius: 12px; padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .table-sanpham table { width: 100%; border-collapse: collapse; font-size: 20px; }
+    .table-sanpham th {
+      background: #C27987; color: white; padding: 20px; font-size: 20px; letter-spacing: 1px;
+    }
+    .table-sanpham td { padding: 15px 10px; vertical-align: middle; font-size: 20px; }
+    .table-sanpham tr { border-bottom: 1px solid #ddd; }
+    .table-sanpham tbody tr:hover { background: #f1f5fa; transition: 0.2s; }
+    .table-sanpham img { border-radius: 10px; width: 85px; }
+    .btn-warning { font-size: 20px; padding: 6px 15px; border-radius: 8px; background-color: #F39F5A; color: white; }
+    .btn-danger { font-size: 20px; padding: 6px 15px; border-radius: 8px; }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header-admin">
+    <h2>LA JEW</h2>
+    <div class="header-admin-right">
+      <i class="fa-solid fa-bell"></i>
+      <i class="fa-solid fa-user"></i>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="main-admin">
+    <ul>
+      <li><a href="./sanphamcuatoi.html"><i class="fa-solid fa-list"></i>Sản phẩm</a></li>
+      <li><a href="./loaisanpham.html"><i class="fa-solid fa-list"></i>Loại sản phẩm</a></li>
+      
+      <li><a href="./donhang_admin.html"><i class="fa-solid fa-sack-dollar"></i>Đơn hàng</a></li>
+     <li><a href="./thongtin_admin.html"><i class="fa-solid fa-gear"></i>Cài đặt</a></li>
+    </ul>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <div class="search-box-container">
+
+      <!-- Nút thêm -->
+      <a href="./add.html" class="btn btn-success" style="font-size:20px; padding:10px 20px; border-radius:10px; color:white;">
+        <i class="fa-solid fa-plus"></i> Thêm sản phẩm
+      </a>
+
+      <!-- Khung tìm kiếm -->
+      <div class="search-order">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Tìm sản phẩm...">
+      </div>
+
+    </div>
+
+    <h1 style="margin-bottom: 10px; font-size: 40px; font-weight: 700; text-align: center;">
+      Danh sách sản phẩm
+    </h1>
+
+    <div class="table-sanpham">
+      <table>
+        <thead>
+          <tr>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Mã loại</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+<script src="../../js/product.js"></script>
+</body>
+</html>
